@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'dart:html' as html;
 
 void main() => runApp(MyApp());
 
@@ -58,6 +59,10 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void htmlOpenLink(String url) {
+    html.window.open(url, '_blank');
+  }
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -67,15 +72,16 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      backgroundColor: Colors.purple.shade100,
-      body: SafeArea(
-        //상단바와 같은 영역에 가리는 것을 막아줌.
+      backgroundColor: Colors.lightBlueAccent.shade100,
+      body: SingleChildScrollView(
+        child: SafeArea(
+          //상단바와 같은 영역에 가리는 것을 막아줌.
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               CircleAvatar(
                 radius: 100,
-                backgroundImage: NetworkImage('images/profile.jpg'),
+                backgroundImage: NetworkImage('assets/images/profile.jpg'),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -93,10 +99,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   Text(
                     'Yeonggyun.Kim',
                     style: TextStyle(
-                        fontFamily: 'Pacifico',
-                        fontSize: 20,
-                        color: Colors.white,
-                        fontWeight: FontWeight.normal),
+                      fontFamily: 'Pacifico',
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontWeight: FontWeight.normal,
+                    ),
                   ),
                 ],
               ),
@@ -124,28 +131,92 @@ class _MyHomePageState extends State<MyHomePage> {
                   color: Colors.teal.shade100,
                 ),
               ),
-              Card(
-                color: Colors.white,
-                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
-                child: ListTile(
-                  leading: Icon(
-                    Icons.email,
-                    color: Colors.teal.shade900,
-                  ),
-                  title: Text(
-                    'kygha7205@zerogyun.dev',
-                    style: TextStyle(
-                      color: Colors.teal.shade900,
-                      fontFamily: 'Source Sans Pro',
-                      fontSize: 20.0,
+              Container(
+                color: Colors.blue,
+                width: MediaQuery.of(context).size.width,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Card(
+                      color: Colors.white,
+                      margin:
+                          EdgeInsets.symmetric(vertical: 100, horizontal: 25),
+                      child: Container(
+                        padding: EdgeInsets.all(10.0),
+                        child: Column(
+                          children: <Widget>[
+                            Image.network(
+                              'assets/images/domain.png',
+                              width: 80,
+                            ),
+                            Container(
+                              padding: EdgeInsets.all(10.0),
+                              child: Text(
+                                "국회의 회의는 공개한다. 다만, 출석의원 과반수의 찬성이\n 있거나 의장이 국가의 안전보장을 위하여\n 필요하다고 인정할 때에는\n 공개하지 아니할 수 있다. \n헌법에 의하여 체결·공포된 조약과 일반적으로 승인된 국제법규는\n 국내법과 같은 효력을 가진다. 국회는 의장 1인과 부의장 2인을 선출한다.\n 국가는 재해를 예방하고 그 위험으로부터 국민을 보호하기 위하여 노력하여야 한다.\n 언론·출판은 타인의 명예나 권리 또는 공중도덕이나\n 사회윤리를 침해하여서는 아니된다. 언론·출판이 타인의 명예나\n 권리를 침해한 때에는 피해자는 이에\n 대한 피해의 배상을 청구할 수 있다. 대통령은 국무회의의 의장이 되고,\n 국무총리는 부의장이 된다. ",
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
+                    Card(
+                        color: Colors.white,
+                        margin:
+                            EdgeInsets.symmetric(vertical: 100, horizontal: 25),
+                        child: Container(
+                          padding: EdgeInsets.all(10.0),
+                          child: Column(
+                            children: <Widget>[
+                              Image.network(
+                                'assets/images/android.png',
+                                width: 80,
+                              ),
+                              Container(
+                                padding: EdgeInsets.all(10.0),
+                                child: Text(
+                                  "국회의 회의는 공개한다. 다만, 출석의원 과반수의 찬성이\n 있거나 의장이 국가의 안전보장을 위하여\n 필요하다고 인정할 때에는\n 공개하지 아니할 수 있다. \n헌법에 의하여 체결·공포된 조약과 일반적으로 승인된 국제법규는\n 국내법과 같은 효력을 가진다. 국회는 의장 1인과 부의장 2인을 선출한다.\n 국가는 재해를 예방하고 그 위험으로부터 국민을 보호하기 위하여 노력하여야 한다.\n 언론·출판은 타인의 명예나 권리 또는 공중도덕이나\n 사회윤리를 침해하여서는 아니된다. 언론·출판이 타인의 명예나\n 권리를 침해한 때에는 피해자는 이에\n 대한 피해의 배상을 청구할 수 있다. 대통령은 국무회의의 의장이 되고,\n 국무총리는 부의장이 된다. ",
+                                ),
+                              ),
+                            ],
+                          ),
+                        )),
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/*
+             Card(
+              color: Colors.white,
+              margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+              child: ListTile(
+                leading: Icon(
+                  Icons.email,
+                  color: Colors.teal.shade900,
+                ),
+                title: Text(
+                  'kygha7205@zerogyun.dev',
+                  style: TextStyle(
+                    color: Colors.teal.shade900,
+                    fontFamily: 'Source Sans Pro',
+                    fontSize: 20.0,
                   ),
                 ),
               ),
-
-              Card(
-                color: Colors.white,
-                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+            ),
+            Card(
+              color: Colors.white,
+              margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+              child: GestureDetector(
+                onTap: () {
+                  htmlOpenLink('https://zerogyun.dev');
+                },
                 child: ListTile(
                   leading: Icon(
                     Icons.home,
@@ -161,9 +232,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
-            ],
-          ),
-      ),
-    );
-  }
-}
+            ),
+*
+* */
