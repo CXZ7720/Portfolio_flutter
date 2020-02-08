@@ -64,6 +64,12 @@ fonts:
   - family: Noto Sans KR
     fonts:
         - asset: assets/fonts/NotoSansKR-Regular.otf
+  - family: Spoqa Han Sans
+    fonts:
+      - asset: assets/fonts/SpoqaHanSansRegular.ttf
+  - family: Product Sans
+    fonts:
+      - asset: assets/fonts/ProductSansRegular.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

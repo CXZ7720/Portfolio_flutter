@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'const.dart';
 import 'dart:html' as html;
 
 void main() => runApp(MyApp());
@@ -46,19 +47,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
   void htmlOpenLink(String url) {
     html.window.open(url, '_blank');
   }
@@ -76,114 +64,268 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SingleChildScrollView(
         child: SafeArea(
           //상단바와 같은 영역에 가리는 것을 막아줌.
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              CircleAvatar(
-                radius: 100,
-                backgroundImage: NetworkImage('assets/images/profile.jpg'),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.baseline,
-                textBaseline: TextBaseline.alphabetic,
-                children: <Widget>[
-                  Text(
-                    '김영균 ',
-                    style: TextStyle(
-                        fontFamily: 'Noto Sans KR',
-                        fontSize: 40,
-                        color: Colors.white,
-                        fontWeight: FontWeight.normal),
-                  ),
-                  Text(
-                    'Yeonggyun.Kim',
-                    style: TextStyle(
-                      fontFamily: 'Pacifico',
-                      fontSize: 20,
-                      color: Colors.white,
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 40,
-                width: 150,
-                child: Divider(
-                  color: Colors.deepPurpleAccent.shade100,
+          child: Container(
+            margin: EdgeInsets.only(
+              top: 10,
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                CircleAvatar(
+                  radius: 100,
+                  backgroundImage: NetworkImage('assets/images/profile.jpg'),
                 ),
-              ),
-              Text(
-                '웹 풀스택, Flutter 개발자',
-                style: TextStyle(
-                  fontFamily: 'Noto Sans KR',
-                  color: Colors.purpleAccent,
-                  fontSize: 20.0,
-                  letterSpacing: 2.5,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(
-                height: 20,
-                width: 150,
-                child: Divider(
-                  color: Colors.teal.shade100,
-                ),
-              ),
-              Container(
-                color: Colors.blue,
-                width: MediaQuery.of(context).size.width,
-                child: Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.baseline,
+                  textBaseline: TextBaseline.alphabetic,
                   children: <Widget>[
-                    Card(
-                      color: Colors.white,
-                      margin:
-                          EdgeInsets.symmetric(vertical: 100, horizontal: 25),
-                      child: Container(
-                        padding: EdgeInsets.all(10.0),
-                        child: Column(
-                          children: <Widget>[
-                            Image.network(
-                              'assets/images/domain.png',
-                              width: 80,
-                            ),
-                            Container(
-                              padding: EdgeInsets.all(10.0),
-                              child: Text(
-                                "국회의 회의는 공개한다. 다만, 출석의원 과반수의 찬성이\n 있거나 의장이 국가의 안전보장을 위하여\n 필요하다고 인정할 때에는\n 공개하지 아니할 수 있다. \n헌법에 의하여 체결·공포된 조약과 일반적으로 승인된 국제법규는\n 국내법과 같은 효력을 가진다. 국회는 의장 1인과 부의장 2인을 선출한다.\n 국가는 재해를 예방하고 그 위험으로부터 국민을 보호하기 위하여 노력하여야 한다.\n 언론·출판은 타인의 명예나 권리 또는 공중도덕이나\n 사회윤리를 침해하여서는 아니된다. 언론·출판이 타인의 명예나\n 권리를 침해한 때에는 피해자는 이에\n 대한 피해의 배상을 청구할 수 있다. 대통령은 국무회의의 의장이 되고,\n 국무총리는 부의장이 된다. ",
-                              ),
-                            ),
-                          ],
-                        ),
+                    Text(
+                      '김영균 ',
+                      style: TextStyle(
+                          fontFamily: 'Noto Sans KR',
+                          fontSize: 40,
+                          color: Colors.white,
+                          fontWeight: FontWeight.normal),
+                    ),
+                    Text(
+                      'Yeonggyun.Kim',
+                      style: TextStyle(
+                        fontFamily: 'Pacifico',
+                        fontSize: 20,
+                        color: Colors.white,
+                        fontWeight: FontWeight.normal,
                       ),
                     ),
-                    Card(
-                        color: Colors.white,
-                        margin:
-                            EdgeInsets.symmetric(vertical: 100, horizontal: 25),
-                        child: Container(
-                          padding: EdgeInsets.all(10.0),
-                          child: Column(
-                            children: <Widget>[
-                              Image.network(
-                                'assets/images/android.png',
-                                width: 80,
-                              ),
-                              Container(
-                                padding: EdgeInsets.all(10.0),
-                                child: Text(
-                                  "국회의 회의는 공개한다. 다만, 출석의원 과반수의 찬성이\n 있거나 의장이 국가의 안전보장을 위하여\n 필요하다고 인정할 때에는\n 공개하지 아니할 수 있다. \n헌법에 의하여 체결·공포된 조약과 일반적으로 승인된 국제법규는\n 국내법과 같은 효력을 가진다. 국회는 의장 1인과 부의장 2인을 선출한다.\n 국가는 재해를 예방하고 그 위험으로부터 국민을 보호하기 위하여 노력하여야 한다.\n 언론·출판은 타인의 명예나 권리 또는 공중도덕이나\n 사회윤리를 침해하여서는 아니된다. 언론·출판이 타인의 명예나\n 권리를 침해한 때에는 피해자는 이에\n 대한 피해의 배상을 청구할 수 있다. 대통령은 국무회의의 의장이 되고,\n 국무총리는 부의장이 된다. ",
-                                ),
-                              ),
-                            ],
-                          ),
-                        )),
                   ],
                 ),
-              )
-            ],
+                SizedBox(
+                  height: 40,
+                  width: 150,
+                  child: Divider(
+                    color: Colors.deepPurpleAccent.shade100,
+                  ),
+                ),
+//                Text(
+//                  '웹 풀스택, Flutter 개발자',
+//                  style: TextStyle(
+//                    fontFamily: 'Noto Sans KR',
+//                    color: Colors.purpleAccent,
+//                    fontSize: 20.0,
+//                    letterSpacing: 2.5,
+//                    fontWeight: FontWeight.bold,
+//                  ),
+//                ),
+                SizedBox(
+                  height: 20,
+                  width: 150,
+                ),
+                Container(
+                  color: Colors.blue,
+                  width: MediaQuery.of(context).size.width,
+                  child: Column(
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.only(top: 30),
+                        padding: EdgeInsets.only(top: 0),
+                        child: Text(
+                          '안녕하세요. 저는 김영균 이라고 합니다.',
+                          style: TextStyle(
+                            fontFamily: 'SpoqaHanSans',
+                            fontSize: 30,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Container(
+                            margin: EdgeInsets.only(
+                              top: 20,
+                              right: 10,
+                            ),
+                            child: Card(
+                              color: Colors.white,
+//                            margin:
+//                                EdgeInsets.symmetric(vertical: 100, horizontal: 25),
+                              child: Container(
+                                padding: EdgeInsets.all(20.0),
+                                child: Column(
+                                  children: <Widget>[
+                                    Image.network(
+                                      'assets/images/domain.png',
+                                      width: 80,
+                                    ),
+                                    Container(
+                                      padding: EdgeInsets.all(10.0),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: <Widget>[
+                                          Row(
+                                            textBaseline:
+                                                TextBaseline.alphabetic,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.baseline,
+                                            children: <Widget>[
+                                              Text(
+                                                "저는 ",
+                                                style: whoami_text,
+                                              ),
+                                              Text(
+                                                " 웹 개발자 ",
+                                                style: devkind_text,
+                                              ),
+                                              Text(
+                                                "입니다.",
+                                                style: whoami_text,
+                                              ),
+                                            ],
+                                          ),
+                                          SizedBox(
+                                            height: 20,
+                                          ),
+                                          Text(
+                                            "Node.js",
+                                            style: languange_text,
+                                          ),
+                                          Text(
+                                            "Vue.js",
+                                            style: languange_text,
+                                          ),
+                                          Text(
+                                            "PHP",
+                                            style: languange_text,
+                                          ),
+                                          Text(
+                                            "Flutter(Dart)",
+                                            style: languange_text,
+                                          ),
+                                          SizedBox(
+                                            height: 23,
+                                          ),
+                                          Text(
+                                            "를 이용한\n프로젝트를 진행했습니다.",
+                                            textAlign: TextAlign.center,
+                                            style: explain_text,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black26,
+                                  blurRadius: 10,
+                                )
+                              ],
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(
+                              top: 20,
+                              right: 10,
+                            ),
+                            child: Card(
+                              color: Colors.white,
+                              child: Container(
+                                padding: EdgeInsets.all(20.0),
+                                child: Column(
+                                  children: <Widget>[
+                                    Image.network(
+                                      'assets/images/android.png',
+                                      width: 80,
+                                    ),
+                                    Container(
+                                      padding: EdgeInsets.all(10.0),
+                                      child: Column(
+                                        children: <Widget>[
+                                          Row(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.baseline,
+                                            textBaseline:
+                                                TextBaseline.alphabetic,
+                                            children: <Widget>[
+                                              Text(
+                                                "저는 ",
+                                                style: whoami_text,
+                                              ),
+                                              Text(
+                                                " 앱 개발자 ",
+                                                style: devkind_text,
+                                              ),
+                                              Text(
+                                                "입니다.",
+                                                style: whoami_text,
+                                              ),
+                                            ],
+                                          ),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          Text(
+                                            "Flutter",
+                                            style: languange_text,
+                                          ),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          Text("를 이용한\n앱을 만들어",
+                                              textAlign: TextAlign.center,
+                                              style: explain_text),
+                                          SizedBox(
+                                            height: 15,
+                                          ),
+                                          Text(
+                                            "Google Play",
+                                            style: TextStyle(
+                                              fontFamily: "Product Sans",
+                                              color: Color(0xFF808285),
+                                              fontSize: 25,
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            height: 15,
+                                          ),
+                                          Text(
+                                            "에 출시하여\n운영중입니다.",
+                                            textAlign: TextAlign.center,
+                                            style: explain_text,
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black26,
+                                  blurRadius: 10,
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 40,
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 50,
+                ),
+              ],
+            ),
           ),
         ),
       ),
