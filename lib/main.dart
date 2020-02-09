@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'const.dart';
-import 'dart:html' as html;
+import 'package:universal_html/prefer_sdk/html.dart' as html;
+import 'hover_extensions.dart';
 
 void main() => runApp(MyApp());
 
@@ -47,7 +48,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  void htmlOpenLink(String url) {
+  void htmlOpenLink(url) {
     html.window.open(url, '_blank');
   }
 
@@ -60,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      backgroundColor: Colors.lightBlueAccent.shade100,
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: SafeArea(
           //상단바와 같은 영역에 가리는 것을 막아줌.
@@ -85,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       style: TextStyle(
                           fontFamily: 'Noto Sans KR',
                           fontSize: 40,
-                          color: Colors.white,
+                          color: Colors.black87,
                           fontWeight: FontWeight.normal),
                     ),
                     Text(
@@ -93,17 +94,97 @@ class _MyHomePageState extends State<MyHomePage> {
                       style: TextStyle(
                         fontFamily: 'Pacifico',
                         fontSize: 20,
-                        color: Colors.white,
+                        color: Colors.black87,
                         fontWeight: FontWeight.normal,
                       ),
                     ),
                   ],
                 ),
                 SizedBox(
-                  height: 40,
+                  height: 60,
                   width: 150,
-                  child: Divider(
-                    color: Colors.deepPurpleAccent.shade100,
+                  child: Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          bottom: 10,
+                        ),
+                        child: Divider(
+                          color: Colors.deepPurpleAccent.shade100,
+                        ),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          HandCursor(
+                            child: GestureDetector(
+                              onTap: () {
+                                htmlOpenLink("https://github.com/CXZ7720");
+                              },
+                              child: Image.network(
+                                //github logo
+                                "assets/images/github-logo.png",
+                                width: 30,
+                                height: 30,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          HandCursor(
+                            child: GestureDetector(
+                              onTap: () {
+                                htmlOpenLink(
+                                    "https://www.linkedin.com/in/%EC%98%81%EA%B7%A0-%EA%B9%80-137a32116/");
+                              },
+                              child: Image.network(
+                                //Linked in logo
+                                "assets/images/linkedin-logo.png",
+                                width: 30,
+                                height: 30,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              left: 10,
+                            ),
+                            child: HandCursor(
+                              child: GestureDetector(
+                                onTap: () {
+                                  htmlOpenLink('mailto:admin@zerogyun.dev');
+                                },
+                                child: Image.network(
+                                  //email logo
+                                  "assets/images/mail.png",
+                                  width: 30,
+                                  height: 30,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              left: 10,
+                            ),
+                            child: HandCursor(
+                              child: GestureDetector(
+                                onTap: () {
+                                  htmlOpenLink('https://zerogyun.dev');
+                                },
+                                child: Image.network(
+                                  //email logo
+                                  "assets/images/homepage.png",
+                                  width: 30,
+                                  height: 30,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
 //                Text(
@@ -121,7 +202,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   width: 150,
                 ),
                 Container(
-                  color: Colors.blue,
+                  color: Color(0xFF66DAFF),
                   width: MediaQuery.of(context).size.width,
                   child: Column(
                     children: <Widget>[
@@ -281,12 +362,20 @@ class _MyHomePageState extends State<MyHomePage> {
                                           SizedBox(
                                             height: 15,
                                           ),
-                                          Text(
-                                            "Google Play",
-                                            style: TextStyle(
-                                              fontFamily: "Product Sans",
-                                              color: Color(0xFF808285),
-                                              fontSize: 25,
+                                          HandCursor(
+                                            child: GestureDetector(
+                                              onTap: () {
+                                                htmlOpenLink(
+                                                    'https://play.google.com/store/apps/details?id=com.busHanyang.hybus');
+                                              },
+                                              child: Text(
+                                                "Google Play",
+                                                style: TextStyle(
+                                                  fontFamily: "Product Sans",
+                                                  color: Color(0xFF808285),
+                                                  fontSize: 25,
+                                                ),
+                                              ),
                                             ),
                                           ),
                                           SizedBox(
@@ -318,6 +407,169 @@ class _MyHomePageState extends State<MyHomePage> {
                       SizedBox(
                         height: 40,
                       ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 50,
+                ),
+                Container(
+                  child: Column(
+                    children: <Widget>[
+                      Text(
+                        "WEB 프로젝트",
+                        style: subtitle_text,
+                      ),
+                      Text(
+                        "그동안 진행했던 WEB 프로젝트입니다.",
+                        style: subtitle_small_text,
+                      ),
+                      SizedBox(
+                        height: 40,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Text(
+                                "버스하냥, BusHanyang",
+                                style: project_text,
+//                                textAlign: TextAlign.start,
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Text(
+                                "한양대학교 ERICA캠퍼스 내 운행중인\n셔틀버스의 도착정보를 실시간으로 안내해주는 서비스.",
+                                style: TextStyle(
+                                  fontFamily: "Spoqa Han Sans",
+                                  fontSize: 18,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              Text(
+                                "사용된 기술",
+                                style: TextStyle(
+                                  fontFamily: "Spoqa Han Sans",
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text(
+                                "Vue.js, Node.js, Module Testing, CI/CD(Jenkins), Docker\nGoogle Cloud Platform",
+                                style: TextStyle(
+                                  fontFamily: "Spoqa Han Sans",
+                                  fontSize: 18,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              Text(
+                                "프로젝트 링크",
+                                style: TextStyle(
+                                  fontFamily: "Spoqa Han Sans",
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.baseline,
+                                textBaseline: TextBaseline.alphabetic,
+                                children: <Widget>[
+                                  Image.network(
+                                    "assets/images/github-logo.png",
+                                    height: 20,
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  HandCursor(
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        htmlOpenLink('https://github.com/BusHanyang');
+                                      },
+                                      child: Text(
+                                        "https://github.com/BusHanyang",
+                                        style: TextStyle(
+                                          fontFamily: "Spoqa Han Sans",
+                                          fontSize: 18,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.baseline,
+                                textBaseline: TextBaseline.alphabetic,
+                                children: <Widget>[
+                                  Image.network(
+                                    "assets/images/homepage.png",
+                                    height: 20,
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  HandCursor(
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        htmlOpenLink('https://hybus.app');
+                                      },
+                                      child: Text(
+                                        "https://hybus.app",
+                                        style: TextStyle(
+                                          fontFamily: "Spoqa Han Sans",
+                                          fontSize: 18,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            width: 110,
+                          ),
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(
+                              10.0,
+                            ),
+
+                            child: Container(
+                              child: Row(
+                                children: <Widget>[
+                                  Image.network(
+                                    "assets/images/bushanyang.jpg",
+                                    height: 480,
+                                  ),
+                                  SizedBox(
+                                    width: 15,
+                                  ),
+                                  Image.network(
+                                    "assets/images/bushanyang_dark.jpg",
+                                    height: 480,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          )
+                        ],
+                      )
                     ],
                   ),
                 ),

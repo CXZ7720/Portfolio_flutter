@@ -27,3 +27,23 @@ const explain_text =  TextStyle(
   fontWeight: FontWeight.bold,
   color: Colors.black87,
 );
+
+const subtitle_text = TextStyle(
+  fontFamily: "Spoqa Han Sans",
+  fontSize: 40,
+  color: Colors.black87,
+  fontWeight: FontWeight.bold,
+);
+
+const subtitle_small_text = TextStyle(
+  fontSize: 24,
+  fontFamily: "Spoqa Han Sans",
+  color: Colors.black87,
+);
+
+const project_text = TextStyle(
+  color: Colors.black87,
+  fontFamily: "Spoqa Han Sans",
+  fontSize: 28,
+  fontWeight: FontWeight.bold,
+);
