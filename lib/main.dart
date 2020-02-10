@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -74,7 +75,8 @@ class _MyHomePageState extends State<MyHomePage> {
               children: <Widget>[
                 CircleAvatar(
                   radius: 100,
-                  backgroundImage: NetworkImage('assets/images/profile.jpg'),
+                  backgroundImage:
+                      NetworkImage('assets/images/profile.jpg'),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -187,16 +189,6 @@ class _MyHomePageState extends State<MyHomePage> {
                     ],
                   ),
                 ),
-//                Text(
-//                  '웹 풀스택, Flutter 개발자',
-//                  style: TextStyle(
-//                    fontFamily: 'Noto Sans KR',
-//                    color: Colors.purpleAccent,
-//                    fontSize: 20.0,
-//                    letterSpacing: 2.5,
-//                    fontWeight: FontWeight.bold,
-//                  ),
-//                ),
                 SizedBox(
                   height: 20,
                   width: 150,
@@ -347,16 +339,16 @@ class _MyHomePageState extends State<MyHomePage> {
                                             ],
                                           ),
                                           SizedBox(
-                                            height: 10,
+                                            height: 25,
                                           ),
                                           Text(
                                             "Flutter",
                                             style: languange_text,
                                           ),
                                           SizedBox(
-                                            height: 10,
+                                            height: 20,
                                           ),
-                                          Text("를 이용한\n앱을 만들어",
+                                          Text("로 앱을 만들어",
                                               textAlign: TextAlign.center,
                                               style: explain_text),
                                           SizedBox(
@@ -371,7 +363,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                               child: Text(
                                                 "Google Play",
                                                 style: TextStyle(
-                                                  fontFamily: "Product Sans",
+                                                  fontFamily:
+                                                      "Product Sans",
                                                   color: Color(0xFF808285),
                                                   fontSize: 25,
                                                 ),
@@ -430,141 +423,101 @@ class _MyHomePageState extends State<MyHomePage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Text(
-                                "버스하냥, BusHanyang",
-                                style: project_text,
+                          Container(
+                            width: 600,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  "버스하냥, BusHanyang",
+                                  style: project_text,
 //                                textAlign: TextAlign.start,
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                "한양대학교 ERICA캠퍼스 내 운행중인\n셔틀버스의 도착정보를 실시간으로 안내해주는 서비스.",
-                                style: TextStyle(
-                                  fontFamily: "Spoqa Han Sans",
-                                  fontSize: 18,
                                 ),
-                              ),
-                              SizedBox(
-                                height: 20,
-                              ),
-                              Text(
-                                "사용된 기술",
-                                style: TextStyle(
-                                  fontFamily: "Spoqa Han Sans",
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
+                                SizedBox(
+                                  height: 8,
                                 ),
-                              ),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                "Vue.js, Node.js, Module Testing, CI/CD(Jenkins), Docker\nGoogle Cloud Platform",
-                                style: TextStyle(
-                                  fontFamily: "Spoqa Han Sans",
-                                  fontSize: 18,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 20,
-                              ),
-                              Text(
-                                "프로젝트 링크",
-                                style: TextStyle(
-                                  fontFamily: "Spoqa Han Sans",
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Row(
-                                crossAxisAlignment: CrossAxisAlignment.baseline,
-                                textBaseline: TextBaseline.alphabetic,
-                                children: <Widget>[
-                                  Image.network(
-                                    "assets/images/github-logo.png",
-                                    height: 20,
+                                Text(
+                                  "한양대학교 ERICA캠퍼스 내 운행중인\n셔틀버스의 도착정보를 실시간으로 안내해주는 서비스.\nPWA 방식으로 다양한 플랫폼을 지원합니다.",
+                                  style: TextStyle(
+                                    fontFamily: "Noto Sans KR",
+                                    fontSize: 18,
+                                    letterSpacing: 0.5,
+                                    fontWeight: FontWeight.w500,
                                   ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  HandCursor(
-                                    child: GestureDetector(
-                                      onTap: () {
-                                        htmlOpenLink('https://github.com/BusHanyang');
-                                      },
-                                      child: Text(
-                                        "https://github.com/BusHanyang",
-                                        style: TextStyle(
-                                          fontFamily: "Spoqa Han Sans",
-                                          fontSize: 18,
-                                        ),
+                                ),
+                                SizedBox(
+                                  height: 50,
+                                ),
+                                Text("사용된 기술", style: project_middle_text),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                    "Vue.js, Node.js, PWA, Module Testing, CI/CD(Jenkins), Docker\nGoogle Cloud Platform(App Engine, Cloud Builder)",
+                                    style: project_explain_text),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Text(
+                                  "프로젝트 링크",
+                                  style: project_middle_text,
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Row(
+                                  children: <Widget>[
+                                    Image.network(
+                                      "assets/images/github-logo.png",
+                                      height: 15,
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    HandCursor(
+                                      child: GestureDetector(
+                                        onTap: () {
+                                          htmlOpenLink(
+                                              'https://github.com/BusHanyang');
+                                        },
+                                        child: Text(
+                                            "https://github.com/BusHanyang",
+                                            style: project_explain_text),
                                       ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Row(
-                                crossAxisAlignment: CrossAxisAlignment.baseline,
-                                textBaseline: TextBaseline.alphabetic,
-                                children: <Widget>[
-                                  Image.network(
-                                    "assets/images/homepage.png",
-                                    height: 20,
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  HandCursor(
-                                    child: GestureDetector(
-                                      onTap: () {
-                                        htmlOpenLink('https://hybus.app');
-                                      },
-                                      child: Text(
-                                        "https://hybus.app",
-                                        style: TextStyle(
-                                          fontFamily: "Spoqa Han Sans",
-                                          fontSize: 18,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Text(
+                                  "역할",
+                                  style: project_middle_text,
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  "프로젝트 매니저, 백엔드 API 서버 개발, DevOps 구축",
+                                  style: project_explain_text,
+                                ),
+                              ],
+                            ),
                           ),
-                          SizedBox(
-                            width: 110,
-                          ),
+//                          SizedBox(
+//                            width: 180,
+//                          ),
                           ClipRRect(
                             borderRadius: BorderRadius.circular(
                               10.0,
                             ),
-
                             child: Container(
-                              child: Row(
-                                children: <Widget>[
-                                  Image.network(
-                                    "assets/images/bushanyang.jpg",
-                                    height: 480,
-                                  ),
-                                  SizedBox(
-                                    width: 15,
-                                  ),
-                                  Image.network(
-                                    "assets/images/bushanyang_dark.jpg",
-                                    height: 480,
-                                  ),
-                                ],
+                              child: Image.network(
+                                'assets/images/hybus_iphone_mockup2.png',
+                                width: 600,
                               ),
                             ),
                           )
@@ -576,6 +529,325 @@ class _MyHomePageState extends State<MyHomePage> {
                 SizedBox(
                   height: 50,
                 ),
+                Container(
+                  child: Column(
+                    children: <Widget>[
+                      Text(
+                        "APP 프로젝트",
+                        style: subtitle_text,
+                      ),
+                      Text(
+                        "그동안 진행했던 APP 프로젝트입니다.",
+                        style: subtitle_small_text,
+                      ),
+                      SizedBox(
+                        height: 40,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Container(
+                            width: 600,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  "HYBUS",
+                                  style: project_text,
+//                                textAlign: TextAlign.start,
+                                ),
+                                SizedBox(
+                                  height: 8,
+                                ),
+                                Text(
+                                  "Flutter 로 제작된 한양대학교ERICA 캠퍼스 셔틀버스\n실시간 운행정보 안내 애플리케이션.\n셔틀버스 운행정보 뿐만아니라 연계교통까지 확인이 가능합니다.",
+                                  style: TextStyle(
+                                    fontFamily: "Noto Sans KR",
+                                    fontSize: 18,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 50,
+                                ),
+                                Text(
+                                  "사용된 기술",
+                                  style: project_middle_text,
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  "Android App : Flutter\nAPI Server : Node.js, Module Testing, CI/CD(Jenkins), Docker",
+                                  style: TextStyle(
+                                    fontFamily: "Noto Sans KR",
+                                    fontSize: 14,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Text(
+                                  "프로젝트 링크",
+                                  style: project_middle_text,
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Row(
+                                  children: <Widget>[
+                                    Image.network(
+                                      "assets/images/github-logo.png",
+                                      height: 15,
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    HandCursor(
+                                      child: GestureDetector(
+                                        onTap: () {
+                                          htmlOpenLink(
+                                              'https://github.com/CXZ7720/ERICA_shuttle-flutter');
+                                        },
+                                        child: Text(
+                                          "https://github.com/CXZ7720/ERICA_shuttle-flutter",
+                                          style: project_explain_text,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  children: <Widget>[
+                                    Image.network(
+                                      "assets/images/googleplay.png",
+                                      height: 15,
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    HandCursor(
+                                      child: GestureDetector(
+                                        onTap: () {
+                                          htmlOpenLink(
+                                              'https://play.google.com/store/apps/details?id=com.busHanyang.hybus');
+                                        },
+                                        child: Text(
+                                          "https://play.google.com/store/apps/details?id=com.busHanyang.hybus",
+                                          style: project_explain_text,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Text(
+                                  "역할",
+                                  style: project_middle_text,
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  "1인 프로젝트. Android 개발, API 서버 구축 및 연동",
+                                  style: project_explain_text,
+                                ),
+                              ],
+                            ),
+                          ),
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(
+                              10.0,
+                            ),
+                            child: Container(
+                              child: Row(
+                                children: <Widget>[
+                                  Image.network(
+                                    "assets/images/play1.png",
+                                    width: 300,
+                                  ),
+//                                  SizedBox(
+//                                    width: 15,
+//                                  ),
+                                  Image.network(
+                                    "assets/images/play2.png",
+                                    width: 300,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 50,
+                ),
+                Container(
+                  color: Colors.deepPurpleAccent.shade100,
+//                  width: MediaQuery.of(context).size.width,
+                  child: Column(
+                    children: <Widget>[
+                      SizedBox(
+                        height: 50,
+                      ),
+                      Text(
+                        "경력 및 수상",
+                        style: subtitle_text,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Container(
+                            margin: EdgeInsets.only(
+                              top: 50,
+                            ),
+                            decoration: BoxDecoration(boxShadow: [
+                              BoxShadow(
+                                color: Colors.black26,
+                                blurRadius: 10,
+                              ),
+                            ]),
+                            child: Card(
+                              color: Colors.white,
+                              child: Container(
+                                width: 800,
+                                padding: EdgeInsets.only(
+                                  top: 50,
+                                ),
+                                child: Column(
+                                  children: <Widget>[
+                                    Column(
+                                      children: <Widget>[
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          children: <Widget>[
+                                            Text(
+                                              "한양대학교 ERICA 캠퍼스\n소프트웨어융합대학 컴퓨터전공",
+                                              style: project_middle_text,
+                                            ),
+                                            SizedBox(
+                                              width: 50,
+                                            ),
+                                            Text(
+                                              "2015.03 ~ 현재",
+                                              style: project_explain_text,
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          height: 20,
+                                        ),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          children: <Widget>[
+                                            Text(
+                                              "국군 제 3707부대\nSW개발/정보보호과 근무",
+                                              style: project_middle_text,
+                                            ),
+                                            SizedBox(
+                                              width: 75,
+                                            ),
+                                            Text(
+                                              "2016.05 ~ 2018.02",
+                                              style: project_explain_text,
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          height: 20,
+                                        ),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          children: <Widget>[
+                                            Text(
+                                              "블록체인 거래소 CoinOne\n산학협력 체험형 인턴십",
+                                              style: project_middle_text,
+                                            ),
+                                            SizedBox(
+                                              width: 65,
+                                            ),
+                                            Text(
+                                              "2019.07 ~ 2019.08",
+                                              style: project_explain_text,
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          height: 20,
+                                        ),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          children: <Widget>[
+                                            Text(
+                                              "Developer Student Club\nHanyang University ERICA 회원",
+                                              style: project_middle_text,
+                                            ),
+                                            SizedBox(
+                                              width: 0,
+                                            ),
+                                            Text(
+                                              "2019.07 ~ 2019.08",
+                                              style: project_explain_text,
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          width: 600,
+                                          height: 50,
+                                          child: Divider(
+                                            color: Colors.black12,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Column(
+                                      children: <Widget>[
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          children: <Widget>[
+                                            Text(
+                                              "한양대학교 SW융합대학 종합학술제\n산학협력/창업 분야 장려상 수상",
+                                              style: project_middle_text,
+                                            ),
+                                            SizedBox(
+                                              width: 80,
+                                            ),
+                                            Text(
+                                              "2019.11",
+                                              style: project_explain_text,
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          height: 20,
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 50,
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 80,
+                ),
               ],
             ),
           ),
@@ -584,48 +856,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
-/*
-             Card(
-              color: Colors.white,
-              margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
-              child: ListTile(
-                leading: Icon(
-                  Icons.email,
-                  color: Colors.teal.shade900,
-                ),
-                title: Text(
-                  'kygha7205@zerogyun.dev',
-                  style: TextStyle(
-                    color: Colors.teal.shade900,
-                    fontFamily: 'Source Sans Pro',
-                    fontSize: 20.0,
-                  ),
-                ),
-              ),
-            ),
-            Card(
-              color: Colors.white,
-              margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
-              child: GestureDetector(
-                onTap: () {
-                  htmlOpenLink('https://zerogyun.dev');
-                },
-                child: ListTile(
-                  leading: Icon(
-                    Icons.home,
-                    color: Colors.teal.shade900,
-                  ),
-                  title: Text(
-                    'https://zerogyun.dev',
-                    style: TextStyle(
-                      color: Colors.teal.shade900,
-                      fontFamily: 'Source Sans Pro',
-                      fontSize: 20.0,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-*
-* */
