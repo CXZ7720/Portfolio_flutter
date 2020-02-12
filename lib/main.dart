@@ -513,14 +513,14 @@ class _MyHomePageState extends State<MyHomePage> {
                                     height: 20,
                                   ),
                                   Text(
-                                    "역할",
+                                    "역할 및 특징",
                                     style: project_middle_text,
                                   ),
                                   SizedBox(
                                     height: 5,
                                   ),
                                   Text(
-                                    "프로젝트 매니저, 백엔드 API 서버 개발, DevOps 구축",
+                                    "• 프로젝트 매니저, 백엔드 API 서버 개발, DevOps 구축.\n• 시간표 데이터를 JSON 형태로 리턴하는 API 서버를 Node.js 와 Express 를 이용하여 제작.\n• 주기별, 요일별로 다른 시간표 데이터를 서버에서 유동적으로 판별하여 전달하도록 설계.\n• DevOps 를 도입하여 단위테스트 부터 빌드까지 전 과정을 자동화.\n• Nodejs 테스트 라이브러리인 Mocha.js 와 Chai.js 를 이용해 API 서버 테스트 자동화.\n• 개발 서버 : Jenkins를 이용해 최신 커밋이 반영된 Docker Container 를 실시간으로 빌드.\n• 릴리즈 서버 : Google App Engine 을 이용해 서비스를 배포, Cloud Builder 를 Github 과 연동하여\n Master 브랜치의 소스가 실시간으로 릴리즈서버에 반영될수 있도록 구현.\n• PWA 표준을 준수하여 제작해 사용자경험을 극대화 하였으며 Android와 IOS 모두를 지원하도록\n Cross-Flatform 을 고려하여 설계됨.",
                                     style: project_explain_text,
                                   ),
                                 ],
@@ -651,7 +651,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     height: 5,
                                   ),
                                   Text(
-                                    "1인 프로젝트.",
+                                    "• 1인 프로젝트.\n• Chromium Extension API를 이용하여 브라우저의 좌측 공간에서 띄울 수 있는 서비스.\n• 약 8000회의 스토어 다운로드 기록.",
                                     style: project_explain_text,
                                   ),
                                 ],
@@ -800,7 +800,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     height: 5,
                                   ),
                                   Text(
-                                    "1인 프로젝트. Android 개발, API 서버 구축 및 연동",
+                                    "• 1인 프로젝트. Android 개발, API 서버 구축 및 연동\n• Flutter 를 이용해 버스운행정보 안내시스템의 안드로이드 플랫폼 앱 제작\n• 서울시 TOIPS API 및 경기도 대중교통 API를 활용해 학교 근처 연계교통 정보를 실시간으로 전달.\n• 셔틀버스 시간표 데이터는 '버스하냥' 프로젝트에서 제작한 API서버를 이용.",
                                     style: project_explain_text,
                                   ),
                                 ],
