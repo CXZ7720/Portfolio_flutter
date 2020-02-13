@@ -223,6 +223,7 @@ class _MyHomePageState extends State<MyHomePage> {
 //                            margin:
 //                                EdgeInsets.symmetric(vertical: 100, horizontal: 25),
                                 child: Container(
+                                  height: 410,
                                   padding: EdgeInsets.all(20.0),
                                   child: Column(
                                     children: <Widget>[
@@ -307,6 +308,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               child: Card(
                                 color: Colors.white,
                                 child: Container(
+                                  height: 410,
                                   padding: EdgeInsets.all(20.0),
                                   child: Column(
                                     children: <Widget>[
@@ -436,7 +438,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     height: 8,
                                   ),
                                   Text(
-                                    "한양대학교 ERICA캠퍼스 내 운행중인\n셔틀버스의 도착정보를 실시간으로 안내해주는 서비스.\nPWA 방식으로 다양한 플랫폼을 지원합니다.",
+                                    "한양대학교 ERICA캠퍼스 내 운행중인\n셔틀버스의 도착정보를 실시간으로 안내해주는 서비스.",
                                     style: TextStyle(
                                       fontFamily: "Noto Sans KR",
                                       fontSize: 18,
@@ -445,7 +447,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     ),
                                   ),
                                   SizedBox(
-                                    height: 50,
+                                    height: 40,
                                   ),
                                   Text("사용된 기술", style: project_middle_text),
                                   SizedBox(
@@ -520,7 +522,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     height: 5,
                                   ),
                                   Text(
-                                    "• 프로젝트 매니저, 백엔드 API 서버 개발, DevOps 구축.\n• 시간표 데이터를 JSON 형태로 리턴하는 API 서버를 Node.js 와 Express 를 이용하여 제작.\n• 주기별, 요일별로 다른 시간표 데이터를 서버에서 유동적으로 판별하여 전달하도록 설계.\n• DevOps 를 도입하여 단위테스트 부터 빌드까지 전 과정을 자동화.\n• Nodejs 테스트 라이브러리인 Mocha.js 와 Chai.js 를 이용해 API 서버 테스트 자동화.\n• 개발 서버 : Jenkins를 이용해 최신 커밋이 반영된 Docker Container 를 실시간으로 빌드.\n• 릴리즈 서버 : Google App Engine 을 이용해 서비스를 배포, Cloud Builder 를 Github 과 연동하여\n Master 브랜치의 소스가 실시간으로 릴리즈서버에 반영될수 있도록 구현.\n• PWA 표준을 준수하여 제작해 사용자경험을 극대화 하였으며 Android와 IOS 모두를 지원하도록\n Cross-Flatform 을 고려하여 설계됨.",
+                                    "• 프로젝트 매니저, 백엔드 API 서버 개발, DevOps 구축.\n• Node.js 와 Express 를 이용하여 시간표 데이터를 JSON 형태로 리턴하는 API 서버 구현.\n• 분기별, 요일별로 다른 시간표 데이터를 서버에서 유동적으로 판별하여 전달하도록 설계.\n• DevOps 를 도입하여 단위테스트 부터 빌드까지 전 과정을 자동화.\n• 개발 서버 : Jenkins를 이용해 최신 커밋이 반영된 Docker Container 를 실시간으로 빌드.\n• 릴리즈 서버 : Google App Engine 을 이용해 서비스를 배포, Cloud Builder 를 Github 과 연동하여\n Master 브랜치의 소스가 실시간으로 릴리즈서버에 반영될수 있도록 구현.\n• PWA 표준을 준수하여 제작해 사용자경험을 극대화",
                                     style: project_explain_text,
                                   ),
                                 ],
@@ -916,9 +918,17 @@ class _MyHomePageState extends State<MyHomePage> {
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceEvenly,
                                             children: <Widget>[
-                                              Text(
-                                                "블록체인 거래소 CoinOne\n산학협력 체험형 인턴십",
-                                                style: project_middle_text,
+                                              HandCursor(
+                                                child: GestureDetector(
+                                                  onTap: () {
+                                                    htmlOpenLink(
+                                                        'https://coinone.co.kr');
+                                                  },
+                                                  child: Text(
+                                                    "블록체인 거래소 coinone\n산학협력 체험형 인턴십",
+                                                    style: project_middle_text,
+                                                  ),
+                                                ),
                                               ),
                                               SizedBox(
                                                 width: 65,
